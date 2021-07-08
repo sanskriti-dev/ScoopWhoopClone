@@ -3,6 +3,14 @@ import React, { useState,useEffect } from 'react';
 import Card from '../card';
 import moment from 'moment';
 import NavIcon from '../../src/assets/header-icon.svg';
+import StickyNaviIcon from '../../src/assets/navIcon.svg'  
+import {
+    DownOutlined,
+    UserOutlined,
+    SearchOutlined,
+    MenuOutlined,
+  } from "@ant-design/icons";
+
 
 import './cards.scss'
 
@@ -30,43 +38,51 @@ const Cards = (props) => {
              setOffSet(pageOffSet)
            }
         }
-    const navListLeft = ["Trending" , "Videos" , "Stories", "Quizzes" , "Memes","Spotlight"]    
-
+    const navListLeft = ["Trending" , "Videos" , "Stories", "Quizzes" , "Memes","Spotlight"] 
+    const navListRight = [ <DownOutlined />, <UserOutlined/>,<SearchOutlined/>,<MenuOutlined/>] 
   
     return (
-        <div>
-            
-            
-
-            <div className ="header">
-                
-                <div className= "navlist">
-                <nav className="navbar navbar-expand-lg ">
-                {/* <a className="navbar-brand" href="#">Navbar</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button> */}
-                <div className="navList-content">
-                    <div className="nav-left">
-                        {navListLeft.map(ele => {
-                            return  <div className="nav-item ">
+        <div>                     
+        <div className = "banner">
+            <header>
+                <div className = "row">
+                    <div className = "col-1">
+                    <img src = {NavIcon}/>
+                    </div>
+                    <div className = "col-8">
+                      <div className = "navlist-left">
+                    {navListLeft.map(ele => {
+                            return  <div className="nav-item">
                             {ele}
                         </div>
                         })}
+                     </div>
                     </div>
+                    <div className = "col-3">
+                    <div className = "navlist-left">
+                    {navListRight.map(ele => {
+                            return ele
+                        })}
+                    </div>
+                    </div>
+                    
                 </div>
-                </nav>
-
-            </div>
-                <div className = "header-article">
+                
+            </header>
+          
+            <div className = "header-article">
                     <span className = "header-category">Entertainment</span>
                     <h1 className = "header-text">16 Fan Favourite Cult Movies That You Didn't Know Were Copied</h1>
                     <span className= "header-read">Read article -{`>`} </span>
             </div>
 
-            <img className="header-image" src='https://s4.scoopwhoop.com/anj2/60547185c8d1115b02424f3a/77808a56-3907-44bd-a6f2-e270996c225c.jpg'/>
-            </div>
-           <div className = "cards mt-30">
+
+      </div>
+   
+   
+   
+      <div className = "cards"> 
+        <div className = "row">
             {allCards?.map(item => {
                 return (
                     <Card 
@@ -81,6 +97,8 @@ const Cards = (props) => {
             })}
         </div>
         </div>
+        </div>
+ 
     )
 
 }

@@ -1,11 +1,9 @@
 .card {
-    margin: 10px;
-    width: 200px;
-    height: 350px;
     border: 0px !important;
 
    .card-body {
-
+    padding: 0;
+    
    .category-text {
       
        display: inline-block;
@@ -41,6 +39,7 @@
     color : #1E1E1E;
     font-family: 'Roboto' sans-serif; 
     line-height: 26px;
+    text-justify: inter-word;
    }
 }
 }
