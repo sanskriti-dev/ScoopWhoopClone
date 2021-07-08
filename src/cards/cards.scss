@@ -2,88 +2,6 @@
    width: 70%;
    margin: 30px auto;
 }
-.header {
-
-    .navlist{
-        position: absolute;
-        top:15px;
-        z-index :1;
-        margin-left: 40px;
-        display: flex;
-        // width: 100vw; 
-        align-items: center;
-
-        .nav-left{
-            display: flex;
-            // width: 40%;
-            margin-left: 30px;
-            // justify-content: space-between;
-        }
-
-        .nav-right {
-            display: flex;
-            // width: 30%;
-            margin-left: 20px;
-            // justify-content: space-between;
-        }
-
-        .nav-item {
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: .03em;
-            color: #1b91ff;
-
-        }
-
-      
-
-        
-
-    }
-
-
-
-
-
-    .header-article {
-        display: block;
-        position: absolute;
-        top : 250px;
-        z-index: 99;
-        width: 70%;
-        margin-left: 40px;
-        .header-text{
-            color: #fff;
-           text-decoration: none
-           }
-        .header-category{
-        background: linear-gradient(136.04deg,#1b91ff -.78%,#9f49e3 92.66%) no-repeat;
-        color: #fff;
-        display: inline-block;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 19px;
-        margin-bottom: 20px;
-        padding: 1px 15px;
-        text-decoration: none;
-        text-transform: uppercase;
-        }
-
-        .header-read {
-            font-size: 14px;
-    font-weight: 500;
-    line-height: 142.97%;
-    background: linear-gradient(136.04deg,#1b91ff -.78%,#9f49e3 92.66%) no-repeat;
-    display: inline-block;
-        }
-    }
-  
-//   //  background-image: url('https://s4.scoopwhoop.com/anj2/60547185c8d1115b02424f3a/77808a56-3907-44bd-a6f2-e270996c225c.jpg');
-//     width: 100vw;
-//     height: 20vh;
-}
-
 
 .banner {
     position: relative;
@@ -131,12 +49,13 @@
     header {
 
         padding: 20px 40px;
-        
-        
+              
         .navlist-left {
             display: flex;
             margin-top: 15px;
             justify-content: space-evenly;
+
+          
         
 
             .nav-item {
@@ -157,15 +76,37 @@
                 transition: transform .3s,-webkit-transform .3s,-o-transform .3s;
 
                 }
+
+                &.nav-item-sticky {
+                    color:  #747070;
+                    &:hover {
+                      color:   #747070;
+                    }
+                }
+    
             }
 
+           
         }
+        
+        
 
     svg {
           color : #1b91ff;
           cursor : pointer;
           font-weight : 900 ;
           font-size: 18px ; 
+          min-width: 30px;
+          max-width: 30px;
+
+          &:hover {
+            font-size: 21px;
+            font-weight: 900;
+            color: #1b91ff;
+            transform: scale(1);
+            transition: transform .3s,-webkit-transform .3s,-o-transform .3s;
+
+            }
       }
 
 
@@ -177,4 +118,17 @@
     }
 
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background-color: #fff;
+    height: 75px;
+    width: inherit;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    transition: all .1s linear;
+
+}
+
 
