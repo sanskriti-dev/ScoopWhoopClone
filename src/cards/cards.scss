@@ -5,6 +5,50 @@
    margin: 30px auto;
 }
 
+.ant-tabs-nav-list {
+    display: flex;
+}
+
+
+
+    .ant-tabs-tab {
+    background-color: #efefef;
+    color: #999696;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 128.47%;
+    width: 148px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    border :none ;
+
+    &.ant-tabs-tab-active {
+        background: linear-gradient(158.35deg,#1b91ff 0,#9f49e3 113.59%);
+        color: #fff;
+    }
+
+    
+}
+
+.ant-tabs-tab-btn {
+    outline-color: transparent;
+}
+
+// .ant-tabs-nav-wrap {
+//     ::after {
+//         background: linear-gradient(158.35deg,#1b91ff 0,#9f49e3 113.59%);
+//         content: "";
+//         width: 100%;
+//         max-width: 1000px;
+//         margin-bottom: 30px;
+//         height: 1px;
+//         display: block;
+//     }
+// }
+
+
+
 .banner {
     position: relative;
     background-blend-mode: overlay;
@@ -56,23 +100,19 @@
             .card-title {
                 color: #242323;
                 display: block;
-                font-size: 22px;
-                font-weight: 700;
-                line-height: 31px;
-                text-decoration: none;
-                vertical-align: baseline;
+                font-size: 21px;
+                 font-weight: 500;
+                 margin-bottom: 28px;
 
             }
 
             .category-text {
                 color: inherit;
                 display: block;
-                font-size: 13px;
-                font-weight: 700;
+                font-size: 15px;
+                font-weight: 500;
                 line-height: 19px;
-                text-decoration: none;
-                text-transform: uppercase;
-                // margin-top: 13px;
+                 margin-bottom: 5px;
             }
 
             .card-readMore{
@@ -233,28 +273,15 @@
     background: transparent; 
 }
 
-// @include break-point(mobile-view) {
-//     .banner{
-//         display: none;
-//     }
-// }
+@include break-point(mobile-view) {
+    .cards {
+        width: 90%;
+    }
+}
 
-// @include break-point(small-mobile-view) {
-//     .banner{
-//         display: none;
-//     }
-// }
-
-
-// @include break-point(mobile-table-view) {
-//     .banner{
-//         display: none;
-//     }
-// }
-
-// @include break-point(tablet-view) {
-//     .banner{
-//         display: none;
-//     }
-// }
+@include break-point(small-mobile-view) {
+    .banner{
+        width: 90%;
+    }
+}
 

@@ -3,9 +3,12 @@ import './card.scss'
 
 const Card = props => {
     return (
-        <div className = "col-12">
+        <div className = "col-3">
         <div className="card">
-        <img className="card-img-top" src= {props.imgSrc} alt="Card  cap"/>
+        <figure className="img-wrapper">             
+        <img className="card-img-top" src= {props.imgSrc} alt="article"/>
+        </figure>
+
         <div className="card-body">
             <a className = "category-text">{props.category}</a>
             <h4 className="card-title">{props.title}</h4>

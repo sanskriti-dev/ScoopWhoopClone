@@ -5,6 +5,7 @@ import moment from 'moment';
 import NavIcon from '../../src/assets/header-icon.svg';
 import MobileNavIcon from '../../src/assets/navIconMobile.svg'
 import StickyNaviIcon from '../../src/assets/navIcon.svg'  
+import { Tabs } from 'antd';
 import {
     DownOutlined,
     UserOutlined,
@@ -14,6 +15,8 @@ import {
 
 
 import './cards.scss'
+const { TabPane } = Tabs;
+
 
 const Cards = (props) => {
     const [allCards,setAllCards] = useState([])
@@ -56,10 +59,12 @@ const Cards = (props) => {
         else 
         setMobileBanner(false)
     }  
+
+    const tabs = ["Fresh" , "Hot"]
     
      
     return (
-        <div>                     
+        <div> 
        {mobileBanner ?  <div className= "banner mobile">
            <div className= "mobile-nav">
            <SearchOutlined/>
@@ -92,8 +97,7 @@ const Cards = (props) => {
             </div>
 
        </div>
-       
-       : 
+        : 
         <div className = "banner desktop"> 
             <header className = {stickyNav ? "sticky" : ""}>
                 <div className = "row">
@@ -128,22 +132,31 @@ const Cards = (props) => {
             </div>
 
 
-      </div> }
+      </div> }     
        <div className = "cards"> 
-        <div className = "row">
-            {allCards?.map(item => {
-                return (
-                    <Card 
-                    imgSrc = {item.feature_img} 
-                    title = {item.title}
-                    category = {item?.cat_display?.[0]?.category_display}
-                    author = {item?.auth_display?.display_name}
-                    readTime = {item.readtime}
-                    published = {moment(item.pub_date).fromNow()}
-                    />    
-                )
-            })}
-        </div>
+        <Tabs defaultActiveKey="1">
+            {tabs.map((ele,index) =>  {
+                return   <TabPane tab= {ele } key= {index} >
+                       <div className = "row">
+                        {allCards?.map(item => {
+                            return (
+                                <Card 
+                                imgSrc = {item.feature_img} 
+                                title = {item.title}
+                                category = {item?.cat_display?.[0]?.category_display}
+                                author = {item?.auth_display?.display_name}
+                                readTime = {item.readtime}
+                                published = {moment(item.pub_date).fromNow()}
+                                />    
+                            )
+                        })}
+                    </div>   
+                     </TabPane>
+                
+                
+                } )}
+  </Tabs>       
+       
         </div>
         </div>
  
