@@ -3,7 +3,7 @@ import './card.scss'
 
 const Card = props => {
     return (
-        <div className = "col-3">
+        <div className = "col-12">
         <div className="card">
         <img className="card-img-top" src= {props.imgSrc} alt="Card  cap"/>
         <div className="card-body">
