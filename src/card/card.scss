@@ -1,0 +1,46 @@
+.card {
+    margin: 10px;
+    width: 200px;
+    height: 350px;
+    border: 0px !important;
+
+   .card-body {
+
+   .category-text {
+      
+       display: inline-block;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .03em;
+        line-height: 19px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color : #551A8B;
+        // background-image:-webkit-linear-gradient(313.96deg,#1b91ff -.78%,#9f49e3 92.66%) no-repeat;  
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;    
+
+   }
+   .author-name {
+    color: #1b91ff;
+    display: block;
+    font-size: 12px;
+    line-height: 15px;
+    // margin-bottom: 2px;
+    text-decoration: none;
+   }
+   .date-time {
+    color: #898989;
+    font-size: 11px;
+    line-height: 142.97%;
+   }
+   .card-title {
+    font-size: 18px;
+    font-weight: 900;
+    color : #1E1E1E;
+    font-family: 'Roboto' sans-serif; 
+    line-height: 26px;
+   }
+}
+}

@@ -1,0 +1,82 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+}
+.header {
+
+    .header-image {
+        width: 100%;
+        position: relative;
+    }
+
+    .navlist{
+        position: absolute;
+        top:0;
+        z-index :1;
+        display: block;
+        margin-left: 40px;
+
+        .navbar {
+
+        }
+
+        .nav-left{
+            display: flex;
+            
+            .nav-item {
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: .03em;
+                color: #1b91ff;
+    
+            }
+
+        }
+
+      
+
+        
+
+    }
+    .header-article {
+        display: block;
+        position: absolute;
+        top : 250px;
+        z-index: 99;
+        width: 70%;
+        margin-left: 40px;
+        .header-text{
+            color: #fff;
+           text-decoration: none
+           }
+        .header-category{
+        background: linear-gradient(136.04deg,#1b91ff -.78%,#9f49e3 92.66%) no-repeat;
+        color: #fff;
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 19px;
+        margin-bottom: 20px;
+        padding: 1px 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+        }
+
+        .header-read {
+            font-size: 14px;
+    font-weight: 500;
+    line-height: 142.97%;
+    background: linear-gradient(136.04deg,#1b91ff -.78%,#9f49e3 92.66%) no-repeat;
+    display: inline-block;
+        }
+    }
+  
+//   //  background-image: url('https://s4.scoopwhoop.com/anj2/60547185c8d1115b02424f3a/77808a56-3907-44bd-a6f2-e270996c225c.jpg');
+//     width: 100vw;
+//     height: 20vh;
+}
