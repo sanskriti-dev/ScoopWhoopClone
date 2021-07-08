@@ -11,8 +11,6 @@ const Card = props => {
             <h4 className="card-title">{props.title}</h4>
             <span className = "author-name">{props.author}</span>
             <span className = "date-time">{props.published} | {props.readTime}</span>
-            {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-            {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
         </div>
         </div>
         

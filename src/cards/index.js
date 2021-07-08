@@ -3,6 +3,7 @@ import React, { useState,useEffect } from 'react';
 import Card from '../card';
 import moment from 'moment';
 import NavIcon from '../../src/assets/header-icon.svg';
+import MobileNavIcon from '../../src/assets/navIconMobile.svg'
 import StickyNaviIcon from '../../src/assets/navIcon.svg'  
 import {
     DownOutlined,
@@ -18,10 +19,12 @@ const Cards = (props) => {
     const [allCards,setAllCards] = useState([])
     const [offset,setOffSet] = useState(8)
     const [stickyNav , setStickyNav] = useState(false)
+    const [mobileBanner , setMobileBanner] = useState(false)
 
     useEffect (() => {
         window.addEventListener('scroll', listenScrollEvent);
-    })
+        window.addEventListener('resize' ,  viewBannerEvent);
+    },[])
 
     useEffect(() => {
         axios.get(`https://www.scoopwhoop.com/api/v4/read/all/?offset=${offset}&limit=20`).then(
@@ -47,11 +50,27 @@ const Cards = (props) => {
              setOffSet(pageOffSet)
            }
       }
+    const viewBannerEvent = e => {
+        if(window.innerWidth <=640)
+            setMobileBanner(true)
+        else 
+        setMobileBanner(false)
+    }  
     
      
     return (
         <div>                     
-        <div className = "banner">
+       {mobileBanner ?  <div className= "banner mobile">
+           <div className= "mobile-nav">
+           <SearchOutlined/>
+           <img src = {MobileNavIcon}/>
+           <MenuOutlined/>
+           </div>
+           <span className = "spotlight-text">Spotlight</span>
+       </div>
+       
+       : 
+        <div className = "banner desktop"> 
             <header className = {stickyNav ? "sticky" : ""}>
                 <div className = "row">
                     <div className = "col-1">
@@ -85,7 +104,7 @@ const Cards = (props) => {
             </div>
 
 
-      </div>
+      </div> }
        <div className = "cards"> 
         <div className = "row">
             {allCards?.map(item => {

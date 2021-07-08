@@ -1,3 +1,5 @@
+@import "../mixin";
+
 .cards {
    width: 70%;
    margin: 30px auto;
@@ -5,12 +7,47 @@
 
 .banner {
     position: relative;
-    background-image: url('https://s4.scoopwhoop.com/anj2/60547185c8d1115b02424f3a/77808a56-3907-44bd-a6f2-e270996c225c.jpg'),linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
     background-blend-mode: overlay;
     width: 100%;
     height: 500px;
     background-repeat: no-repeat;
+
+    &.mobile {
+        padding: 15px;
+        background: linear-gradient(136.04deg,#1b91ff -.78%,#9f49e3 92.66%);
+
+        .mobile-nav {
+            display: flex;
+            justify-content: space-between;
+           
+          
+            svg {
+              color: white;
+              height: 35px;
+              width: 23px;
+            }
+    
+          
+        }
+        .spotlight-text {
+            background-color: #1b91ff;
+            color: #fff;
+            display: block;
+            padding: 10px 16px;
+            text-decoration: none;
+            border-radius: 20px;
+            width: 100px;
+            margin-top: 10px;
+        }
+        
+
+    }
+    
+    &.desktop {
+    position: relative;
+    background-image: url('https://s4.scoopwhoop.com/anj2/60547185c8d1115b02424f3a/77808a56-3907-44bd-a6f2-e270996c225c.jpg'),linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));    
     object-fit: contain;
+    }
 
     .header-article {
         display: block;
@@ -45,6 +82,8 @@
             display: inline-block;
         }
     }
+
+   
 
     header {
 
@@ -131,4 +170,28 @@
 
 }
 
+// @include break-point(mobile-view) {
+//     .banner{
+//         display: none;
+//     }
+// }
+
+// @include break-point(small-mobile-view) {
+//     .banner{
+//         display: none;
+//     }
+// }
+
+
+// @include break-point(mobile-table-view) {
+//     .banner{
+//         display: none;
+//     }
+// }
+
+// @include break-point(tablet-view) {
+//     .banner{
+//         display: none;
+//     }
+// }
 
