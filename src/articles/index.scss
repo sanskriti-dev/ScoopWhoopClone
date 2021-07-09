@@ -1,311 +1,290 @@
-@import "../mixin";
+@import '../mixin';
 
 .cards {
-   width: 70%;
-   margin: 30px auto;
+  width: 70%;
+  margin: 30px auto;
 }
 
 .ant-tabs-nav-list {
-    display: flex;
+  display: flex;
 }
-    
-.ant-tabs-tab {
-    background-color: #efefef;
-    color: #999696;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 128.47%;
-    width: 148px;
-    text-align: center;
-    padding: 5px;
-    cursor: pointer;
-    border :none ;
 
-    &.ant-tabs-tab-active {
-        background: linear-gradient(158.35deg,#1b91ff 0,#9f49e3 113.59%);
-        color: #fff;
-    }   
+.ant-tabs-tab {
+  background-color: #efefef;
+  color: #999696;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 128.47%;
+  width: 148px;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+
+  &.ant-tabs-tab-active {
+    background: linear-gradient(158.35deg, #1b91ff 0, #9f49e3 113.59%);
+    color: #fff;
+  }
 }
 
 .ant-tabs-tab-btn {
-    outline-color: transparent;
+  outline-color: transparent;
 }
 
 .ant-tabs-nav-list {
-    position: relative;
+  position: relative;
 
-     &:after {
-        background: linear-gradient(158.35deg,#1b91ff 0,#9f49e3 113.59%);
-        content: "";
-        width: 100%;
-        height: 1px;
-        bottom :0;
-        position: absolute;
-    }
+  &:after {
+    background: linear-gradient(158.35deg, #1b91ff 0, #9f49e3 113.59%);
+    content: '';
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    position: absolute;
+  }
 }
 
-.ant-tabs-tabpane-active{
-    &:focus{
+.ant-tabs-tabpane-active {
+  &:focus {
     outline-color: transparent;
-    }
+  }
 }
 
 .banner {
-    position: relative;
-    background-blend-mode: overlay;
-    width: 100%;
-    height: 500px;
-    background-repeat: no-repeat;
+  position: relative;
+  background-blend-mode: overlay;
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat;
 
-    &.mobile {
-        padding: 20px;
-        background: linear-gradient(136.04deg,#1b91ff -.78%,#9f49e3 92.66%);
+  &.mobile {
+    padding: 20px;
+    background: linear-gradient(136.04deg, #1b91ff -0.78%, #9f49e3 92.66%);
 
-        .mobile-nav {
-            display: flex;
-            justify-content: space-between;
-                 
-            svg {
-              color: white;
-              height: 35px;
-              width: 23px;
-            }
-    
-          
-        }
+    .mobile-nav {
+      display: flex;
+      justify-content: space-between;
 
-        .spotlight-text {
-            background-color: #1b91ff;
-            color: #fff;
-            display: block;
-            padding: 10px 16px;
-            text-decoration: none;
-            border-radius: 20px;
-            width: 100px;
-            margin-top: 12px;
-        }
-
-        .card {
-            width: 310px;
-            margin-right: 20px;
-            height: 350px;
-            margin-top: 15px;
-
-            .card-body {
-                text-align: center;
-                padding: 7px 25px;
-                color: #1b91ff;
-
-
-            .card-title {
-                color: #242323;
-                display: block;
-                font-size: 21px;
-                 font-weight: 500;
-                 margin-bottom: 28px;
-
-            }
-
-            .category-text {
-                color: inherit;
-                display: block;
-                font-size: 15px;
-                font-weight: 500;
-                line-height: 19px;
-                 margin-bottom: 5px;
-            }
-
-            .card-readMore{
-                color: inherit;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-size: 17px;
-                
-            }
-
-           
-
-        }
-
-        }
-
-        .featured-cards {
-            overflow-x: auto;
-            overflow-y: hidden;
-           
-            .card-ele {
-                display: inline-flex;
-
-               
-            }
-        }
-        
-
-    }
-    
-    &.desktop {
-    position: relative;
-    background-image: url('https://s4.scoopwhoop.com/anj2/60547185c8d1115b02424f3a/77808a56-3907-44bd-a6f2-e270996c225c.jpg'),linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));    
-    object-fit: contain;
+      svg {
+        color: white;
+        height: 35px;
+        width: 23px;
+      }
     }
 
-    .header-article {
-        display: block;
-        position: absolute;
-        top : 250px;
-        z-index: 99;
-        width: 70%;
-        margin-left: 40px;
-        cursor: pointer;        
-
-        .header-text{
-            color: #fff;
-           text-decoration: none;
-           font-size: 31px;
-           font-weight: 600;
-           }
-       
-           .header-category{
-            background: linear-gradient(136.04deg,#1b91ff -.78%,#9f49e3 92.66%) no-repeat;
-            color: #fff;
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 700;
-            line-height: 19px;
-            margin-bottom: 20px;
-            padding: 1px 15px;
-            text-decoration: none;
-            text-transform: uppercase;
-            }
-
-        .header-read {
-            font-size: 17px;
-            font-weight: 500;
-             display: inline-block;
-            margin-top : 15px;
-            background: -webkit-linear-gradient(#1b91ff ,#9f49e3);
-            -webkit-background-clip: text;
-           -webkit-text-fill-color: transparent; 
-        }
+    .spotlight-text {
+      background-color: #1b91ff;
+      color: #fff;
+      display: block;
+      padding: 10px 16px;
+      text-decoration: none;
+      border-radius: 20px;
+      width: 100px;
+      margin-top: 12px;
     }
 
-   
+    .card {
+      width: 310px;
+      margin-right: 20px;
+      height: 350px;
+      margin-top: 15px;
 
-    header {
-        padding: 20px 40px;
-              
-        .navlist-left {
-            display: flex;
-            margin-top: 15px;
-            margin-right: 117px;
-            justify-content: space-around; 
-            
-            &.right {
-                margin-right: 15px;
-                justify-content: space-between;
-            }
+      .card-body {
+        text-align: center;
+        padding: 7px 25px;
+        color: #1b91ff;
 
-            .nav-item {
-                font-size: 15px;
-                font-weight: 700;
-                color: #1b91ff;
-                text-transform: uppercase;
-                justify-content: space-evenly ;
-                cursor: pointer;
-                min-width: 30px;
-                max-width: 30px;
+        .card-title {
+          color: #242323;
+          display: block;
+          font-size: 21px;
+          font-weight: 500;
+          margin-bottom: 28px;
+        }
 
-                &:hover {
-                font-size: 17px;
-                font-weight: 900;
-                color: #1b91ff;
-                transform: scale(1);
-                transition: transform .3s,-webkit-transform .3s,-o-transform .3s;
+        .category-text {
+          color: inherit;
+          display: block;
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 19px;
+          margin-bottom: 5px;
+        }
 
-                }
+        .card-readMore {
+          color: inherit;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 17px;
+        }
+      }
+    }
 
-                &.nav-item-sticky {
-                    color:  #747070;
-                    margin-top: -10px;
-                    &:hover {
-                      color:   #747070;
-                    }
-                }
-    
-            }
+    .featured-cards {
+      overflow-x: auto;
+      overflow-y: hidden;
 
-            .icons-sticky {
-                margin-top: -15px;
-                margin-left: 15px;
-            }
-
-            .icon {
-                margin-left: 15px;
-                margin-top: -5px;
-            }
+      .card-ele {
+        display: inline-flex;
+      }
+    }
   }
-        
-        
 
-    svg {
-          color : #1b91ff;
-          cursor : pointer;
-          font-weight : 900 ;
-          font-size: 18px ; 
-          min-width: 30px;
-          max-width: 30px;
+  &.desktop {
+    position: relative;
+    background-image: url('https://s4.scoopwhoop.com/anj2/60547185c8d1115b02424f3a/77808a56-3907-44bd-a6f2-e270996c225c.jpg'),
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    object-fit: contain;
+  }
 
-          &:hover {
-            font-size: 21px;
-            font-weight: 900;
-            color: #1b91ff;
-            transform: scale(1);
-            transition: transform .3s,-webkit-transform .3s,-o-transform .3s;
+  .header-article {
+    display: block;
+    position: absolute;
+    top: 250px;
+    z-index: 99;
+    width: 70%;
+    margin-left: 40px;
+    cursor: pointer;
 
-            }
+    .header-text {
+      color: #fff;
+      text-decoration: none;
+      font-size: 31px;
+      font-weight: 600;
+    }
+
+    .header-category {
+      background: linear-gradient(136.04deg, #1b91ff -0.78%, #9f49e3 92.66%)
+        no-repeat;
+      color: #fff;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 19px;
+      margin-bottom: 20px;
+      padding: 1px 15px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .header-read {
+      font-size: 17px;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 15px;
+      background: -webkit-linear-gradient(#1b91ff, #9f49e3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  header {
+    padding: 20px 40px;
+
+    .navlist-left {
+      display: flex;
+      margin-top: 15px;
+      margin-right: 117px;
+      justify-content: space-around;
+
+      &.right {
+        margin-right: 15px;
+        justify-content: space-between;
       }
 
+      .nav-item {
+        font-size: 15px;
+        font-weight: 700;
+        color: #1b91ff;
+        text-transform: uppercase;
+        justify-content: space-evenly;
+        cursor: pointer;
+        min-width: 30px;
+        max-width: 30px;
 
+        &:hover {
+          font-size: 17px;
+          font-weight: 900;
+          color: #1b91ff;
+          transform: scale(1);
+          transition: transform 0.3s, -webkit-transform 0.3s, -o-transform 0.3s;
+        }
+
+        &.nav-item-sticky {
+          color: #747070;
+          margin-top: -10px;
+          &:hover {
+            color: #747070;
+          }
+        }
+      }
+
+      .icons-sticky {
+        margin-top: -15px;
+        margin-left: 15px;
+      }
+
+      .icon {
+        margin-left: 15px;
+        margin-top: -5px;
+      }
     }
 
-    ::after ::before {
-        background: linear-gradient(180deg,rgba(0,0,0,.9) 0,rgba(30,30,30,0) 58.02%);
-    }
+    svg {
+      color: #1b91ff;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 18px;
+      min-width: 30px;
+      max-width: 30px;
 
+      &:hover {
+        font-size: 21px;
+        font-weight: 900;
+        color: #1b91ff;
+        transform: scale(1);
+        transition: transform 0.3s, -webkit-transform 0.3s, -o-transform 0.3s;
+      }
+    }
+  }
+
+  ::after ::before {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.9) 0,
+      rgba(30, 30, 30, 0) 58.02%
+    );
+  }
 }
 
 .sticky {
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    background-color: #fff;
-    height: 75px;
-    width: inherit;
-    box-shadow: 0 2px 10px rgba(0,0,0,.05);
-    transition: all .1s linear;
-
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+  height: 75px;
+  width: inherit;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.1s linear;
 }
 
-
-
 @include break-point(mobile-view) {
-    .cards {
-        width: 90%;
-    }
+  .cards {
+    width: 90%;
+  }
 
-    ::-webkit-scrollbar {
-     width: 0; 
-     background: transparent; 
- }
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
 }
 
 @include break-point(small-mobile-view) {
-    .banner{
-        width: unset;
-    }
-    ::-webkit-scrollbar {
-        width: 0; 
-        background: transparent; 
-    }
+  .banner {
+    width: unset;
+  }
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
 }
-

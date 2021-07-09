@@ -1,8 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const ImageComponent = (props) => {
-	return  <img className= {props.className} src= {props.imgSrc} alt="article" />
+  return <img className={props.className} src={props.imgSrc} alt="article" />
+}
 
-};
-
-export default ImageComponent;
+export default ImageComponent

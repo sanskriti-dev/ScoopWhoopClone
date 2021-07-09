@@ -1,6 +1,14 @@
-<!-- <svg class="not-marked" width="12" height="17" fill="none">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M.5 16.2L6 13.45l5.5 2.75V1.57C11.5.704 10.796 0 9.929 0H2.07C1.204 0 .5.704.5 1.571V16.2zM6 11.693l-3.929 1.964V1.571H9.93v12.086L6 11.693z" fill="#FF9B04">
-</path>
-</svg> -->
 
-<svg class="marked" width="12" height="17" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" clip-rule="evenodd" viewBox="0 0 12 17"><path fill="#1b91ff" d="M-.013 17.016l6-2.887 6 2.887V1.665c0-.91-.767-1.65-1.714-1.65H1.7c-.946 0-1.714.74-1.714 1.65v15.35z"></path></svg>
+<svg
+  class="marked"
+  width="12"
+  height="17"
+  fill-rule="evenodd"
+  stroke-linejoin="round"
+  stroke-miterlimit="1.414"
+  clip-rule="evenodd"
+  viewBox="0 0 12 17"
+><path
+    fill="#1b91ff"
+    d="M-.013 17.016l6-2.887 6 2.887V1.665c0-.91-.767-1.65-1.714-1.65H1.7c-.946 0-1.714.74-1.714 1.65v15.35z"
+  /></svg>
