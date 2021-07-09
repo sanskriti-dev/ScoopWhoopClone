@@ -14,13 +14,15 @@ const Articles = (props) => {
   const [allCards, setAllCards] = useState([])
   const [offset, setOffSet] = useState(0)
   const [stickyNav, setStickyNav] = useState(false)
-  const [mobileBanner, setMobileBanner] = useState(false)
+  const [mobileBanner, setMobileBanner] = useState()
   const [isFetching, setIsFetching] = useState(false)
   const [isloading, setIsLoading] = useState(false)
 
   useEffect(() => {
     window.addEventListener('scroll', listenScrollEvent)
-    window.addEventListener('resize', viewBannerEvent)
+        if (window.innerWidth <= 640) 
+           setMobileBanner(true)
+        else setMobileBanner(false)
     getArticles()
   }, [])
 
