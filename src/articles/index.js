@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import Card from './articles'
 import moment from 'moment'
-import { Tabs } from 'antd'
+import { message, notification, Tabs } from 'antd'
 import MobileBanner from './header/mobileBanner'
 import DesktopBanner from './header/desktopBanner'
 import { LoadingOutlined } from '@ant-design/icons'
@@ -51,15 +51,12 @@ const Articles = (props) => {
     setIsFetching(true)
   }
 
-  const viewBannerEvent = (e) => {
-    if (window.innerWidth <= 640) setMobileBanner(true)
-    else setMobileBanner(false)
-  }
 
   const tabs = ['Fresh', 'Hot']
 
   const getArticles = async () => {
     setIsLoading(true)
+    try {
     await axios
       .get(
         `https://www.scoopwhoop.com/api/v4/read/all/?offset=${offset}&limit=8`,
@@ -70,7 +67,14 @@ const Articles = (props) => {
         setAllCards(allCardsData)
         setOffSet(pageOffset)
         setIsLoading(false)
+       
       })
+    } catch (err){
+        notification['error']({
+            message : "Somthing went wrong"
+        })
+
+    }
   }
 
   return (

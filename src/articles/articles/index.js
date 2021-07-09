@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react'
 import './index.scss'
-import NaviIcon from '../../assets/navIcon.svg'
 
 const ImageComponent = React.lazy(() => import('./articleImage'))
 
