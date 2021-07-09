@@ -17,6 +17,7 @@ const Articles = (props) => {
   const [mobileBanner, setMobileBanner] = useState()
   const [isFetching, setIsFetching] = useState(false)
   const [isloading, setIsLoading] = useState(false)
+  const[stickyFooter ,setStickyFooter] = useState()
 
   useEffect(() => {
     window.addEventListener('scroll', listenScrollEvent)
@@ -38,10 +39,12 @@ const Articles = (props) => {
 
   const listenScrollEvent = (e) => {
     if (window.scrollY > 170) {
-      setStickyNav(true)
+        mobileBanner ? setStickyFooter(false) : setStickyNav(true)
     } else {
-      setStickyNav(false)
+        mobileBanner ? setStickyFooter(true) : setStickyNav(false)
     }
+  
+        
     if (
       Math.ceil(window.innerHeight + document.documentElement.scrollTop) !==
         document.documentElement.offsetHeight ||
@@ -105,7 +108,7 @@ const Articles = (props) => {
                     )
                   })}
                   {isloading ? <LoadingOutlined /> : null}
-                  {mobileBanner ? <Footer/> : null}
+                  {stickyFooter ? <Footer/> : null}
                 </div>
               </TabPane>
             )
