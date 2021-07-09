@@ -28,7 +28,6 @@ const Articles = (props) => {
     getArticles()
   }, [])
 
-  //   setTimeout(listenScrollEvent,100);
 
   useEffect(() => {
     if (!isFetching) return
@@ -37,26 +36,16 @@ const Articles = (props) => {
 
   const getMoreArticles = () => {
     getArticles()
-    setIsFetching(false)
   }
 
   const listenScrollEvent = (e) => {
-    if (window.pageYOffset >= 170) {
-      setStickyNav(true)
-    } else {
-      setStickyNav(false)
-    }
+    window.pageYOffset >= 170 ? setStickyNav(true) : setStickyNav(false)
+    window.pageYOffset < 500 ? setStickyFooter(true) : setStickyFooter(false)
 
-    if (window.pageYOffset < 500) setStickyFooter(true)
-    else setStickyFooter(false)
-
-    if (
-      Math.ceil(window.innerHeight + document.documentElement.scrollTop) !==
-        document.documentElement.offsetHeight ||
-      isFetching
-    )
-      return
+    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight && !isFetching)
     setIsFetching(true)
+    else
+    return
   }
 
   const tabs = ['Fresh', 'Hot']
@@ -74,6 +63,8 @@ const Articles = (props) => {
           setAllCards(allCardsData)
           setOffSet(pageOffset)
           setIsLoading(false)
+          setIsFetching(false)
+
         })
     } catch (err) {
       notification['error']({
