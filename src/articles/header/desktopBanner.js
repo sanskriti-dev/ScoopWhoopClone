@@ -52,8 +52,7 @@ const DesktopBanner = (props) => {
               {navListRight.map((ele) => {
                 return (
                   <div className={props.stickyNav ? 'icons-sticky' : 'icon'}>
-                    {' '}
-                    {ele}{' '}
+                    {ele}
                   </div>
                 )
               })}

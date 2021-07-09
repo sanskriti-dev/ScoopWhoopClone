@@ -33,13 +33,13 @@ const MobileBanner = (props) => {
             <div className="card">
               <img
                 className="card-img-top"
-                src="https://image.scoopwhoop.com/w330/s3.scoopwhoop.com/anj2/60547185c8d1115b02424f3a/af7a268a-5287-45f3-b93d-cf50589ab517.jpg"
+                src="https://image.scoopwhoop.com/w330/s3.scoopwhoop.com/anj/pc/288686213.jpg"
                 alt="Card  cap"
               />
               <div className="card-body">
                 <span className="category-text">Entertainment</span>
                 <h4 className="card-title">
-                  16 Fan Favourite Cult Movies That You Didn't Know Were Copied
+                18 Bollywood Movies Which Will Alter Your Perception Towards Life
                 </h4>
                 <span className="card-readMore">Read More</span>
               </div>

@@ -1,16 +1,17 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import Card from './article'
+import Card from './articles'
 import moment from 'moment'
 import { Tabs } from 'antd'
 import MobileBanner from './header/mobileBanner'
 import DesktopBanner from './header/desktopBanner'
+import BookmarkIcon from '../assets/bookmark-icon.svg'
 import { LoadingOutlined } from '@ant-design/icons'
 
 import './index.scss'
 const { TabPane } = Tabs
 
-const Cards = (props) => {
+const Articles = (props) => {
   const [allCards, setAllCards] = useState([])
   const [offset, setOffSet] = useState(0)
   const [stickyNav, setStickyNav] = useState(false)
@@ -109,4 +110,4 @@ const Cards = (props) => {
   )
 }
 
-export default Cards
+export default Articles
