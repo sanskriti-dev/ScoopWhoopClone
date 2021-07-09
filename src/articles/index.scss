@@ -1,4 +1,5 @@
 @import '../mixin';
+@import '../variables.scss';
 
 .cards {
   width: 70%;
@@ -10,8 +11,8 @@
 }
 
 .ant-tabs-tab {
-  background-color: #efefef;
-  color: #999696;
+  background-color: $white;
+  color: $dark-grey;
   font-weight: 900;
   font-size: 18px;
   line-height: 128.47%;
@@ -22,8 +23,8 @@
   border: none;
 
   &.ant-tabs-tab-active {
-    background: linear-gradient(158.35deg, #1b91ff 0, #9f49e3 113.59%);
-    color: #fff;
+    background: linear-gradient(158.35deg,$bule 0,$dark-purple 113.59%);
+    color: $white;
   }
 }
 
@@ -35,7 +36,7 @@
   position: relative;
 
   &:after {
-    background: linear-gradient(158.35deg, #1b91ff 0, #9f49e3 113.59%);
+    background: linear-gradient(158.35deg, $bule 0, $dark-purple 113.59%);
     content: '';
     width: 100%;
     height: 1px;
@@ -59,7 +60,7 @@
 
   &.mobile {
     padding: 20px;
-    background: linear-gradient(136.04deg, #1b91ff -0.78%, #9f49e3 92.66%);
+    background: linear-gradient(136.04deg, $bule -0.78%, $dark-purple 92.66%);
 
     .mobile-nav {
       display: flex;
@@ -73,8 +74,8 @@
     }
 
     .spotlight-text {
-      background-color: #1b91ff;
-      color: #fff;
+      background-color: $bule;
+      color: $white;
       display: block;
       padding: 10px 16px;
       text-decoration: none;
@@ -92,7 +93,7 @@
       .card-body {
         text-align: center;
         padding: 7px 25px;
-        color: #1b91ff;
+        color: $bule;
 
         .card-title {
           color: #242323;
@@ -147,16 +148,16 @@
     cursor: pointer;
 
     .header-text {
-      color: #fff;
+      color:$white;
       text-decoration: none;
       font-size: 31px;
       font-weight: 600;
     }
 
     .header-category {
-      background: linear-gradient(136.04deg, #1b91ff -0.78%, #9f49e3 92.66%)
+      background: linear-gradient(136.04deg,$bule -0.78%, $dark-purple 92.66%)
         no-repeat;
-      color: #fff;
+      color: $white;
       display: inline-block;
       font-size: 13px;
       font-weight: 700;
@@ -172,7 +173,7 @@
       font-weight: 500;
       display: inline-block;
       margin-top: 15px;
-      background: -webkit-linear-gradient(#1b91ff, #9f49e3);
+      background: -webkit-linear-gradient($bule,$dark-purple);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -195,7 +196,7 @@
       .nav-item {
         font-size: 15px;
         font-weight: 700;
-        color: #1b91ff;
+        color: $bule;
         text-transform: uppercase;
         justify-content: space-evenly;
         cursor: pointer;
@@ -205,16 +206,16 @@
         &:hover {
           font-size: 17px;
           font-weight: 900;
-          color: #1b91ff;
+          color: $bule;
           transform: scale(1);
           transition: transform 0.3s, -webkit-transform 0.3s, -o-transform 0.3s;
         }
 
         &.nav-item-sticky {
-          color: #747070;
+          color: $brown;
           margin-top: -10px;
           &:hover {
-            color: #747070;
+            color:$brown;
           }
         }
       }
@@ -231,7 +232,7 @@
     }
 
     svg {
-      color: #1b91ff;
+      color: $bule;
       cursor: pointer;
       font-weight: 900;
       font-size: 18px;
@@ -241,7 +242,7 @@
       &:hover {
         font-size: 21px;
         font-weight: 900;
-        color: #1b91ff;
+        color:$bule;
         transform: scale(1);
         transition: transform 0.3s, -webkit-transform 0.3s, -o-transform 0.3s;
       }
@@ -261,7 +262,7 @@
   position: fixed;
   top: 0;
   z-index: 999;
-  background-color: #fff;
+  background-color: $white;
   height: 75px;
   width: inherit;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -271,12 +272,17 @@
 .footer {
     position: fixed;
     display: flex;
-    background: linear-gradient(156.31deg,#9f49e3 3.34%,#1e82de 128.25%);
+    background: linear-gradient(156.31deg,$dark-purple 3.34%,$dark-bule 128.25%);
     bottom: 0;
     width: 100%;
     left: 0;
-    color: #fff;
+    color: $white;
     text-align: center;
+    justify-content: space-around;
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @include break-point(mobile-view) {
@@ -288,6 +294,17 @@
     width: 0;
     background: transparent;
   }
+
+  .ant-tabs-tab {
+      min-width: 50%;
+      &.ant-tabs-tab-active {
+        color:$black;
+        background: $white;
+        font-weight: 500;
+        min-width: 50%;
+    
+      }
+  }
 }
 
 @include break-point(small-mobile-view) {
@@ -298,4 +315,14 @@
     width: 0;
     background: transparent;
   }
+  .ant-tabs-tab {
+    min-width: 50%;
+    &.ant-tabs-tab-active {
+      color: $black;
+      background: $white;
+      font-weight: 500;
+      min-width: 50%;
+  
+    }
+}
 }

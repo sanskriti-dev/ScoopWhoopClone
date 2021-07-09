@@ -17,15 +17,17 @@ const Articles = (props) => {
   const [mobileBanner, setMobileBanner] = useState()
   const [isFetching, setIsFetching] = useState(false)
   const [isloading, setIsLoading] = useState(false)
-  const[stickyFooter ,setStickyFooter] = useState()
+  const [stickyFooter, setStickyFooter] = useState()
 
   useEffect(() => {
+    if (window.innerWidth <= 700) setMobileBanner(true)
+    else setMobileBanner(false)
+
     window.addEventListener('scroll', listenScrollEvent)
-        if (window.innerWidth <= 700) 
-           setMobileBanner(true)
-        else setMobileBanner(false)
     getArticles()
   }, [])
+
+  //   setTimeout(listenScrollEvent,100);
 
   useEffect(() => {
     if (!isFetching) return
@@ -38,13 +40,15 @@ const Articles = (props) => {
   }
 
   const listenScrollEvent = (e) => {
-    if (window.scrollY > 170) {
-        mobileBanner ? setStickyFooter(false) : setStickyNav(true)
+    if (window.scrollY >= 170) {
+      setStickyNav(true)
     } else {
-        mobileBanner ? setStickyFooter(true) : setStickyNav(false)
+      setStickyNav(false)
     }
-  
-        
+
+    if (mobileBanner && window.scrollY < 500) setStickyFooter(true)
+    else setStickyFooter(false)
+
     if (
       Math.ceil(window.innerHeight + document.documentElement.scrollTop) !==
         document.documentElement.offsetHeight ||
@@ -54,29 +58,26 @@ const Articles = (props) => {
     setIsFetching(true)
   }
 
-
   const tabs = ['Fresh', 'Hot']
 
   const getArticles = async () => {
     setIsLoading(true)
     try {
-    await axios
-      .get(
-        `https://www.scoopwhoop.com/api/v4/read/all/?offset=${offset}&limit=8`,
-      )
-      .then((response) => {
-        let allCardsData = [...allCards, ...response.data.data]
-        let pageOffset = offset + 8
-        setAllCards(allCardsData)
-        setOffSet(pageOffset)
-        setIsLoading(false)
-       
-      })
-    } catch (err){
-        notification['error']({
-            message : "Somthing went wrong"
+      await axios
+        .get(
+          `https://www.scoopwhoop.com/api/v4/read/all/?offset=${offset}&limit=8`,
+        )
+        .then((response) => {
+          let allCardsData = [...allCards, ...response.data.data]
+          let pageOffset = offset + 8
+          setAllCards(allCardsData)
+          setOffSet(pageOffset)
+          setIsLoading(false)
         })
-
+    } catch (err) {
+      notification['error']({
+        message: 'Somthing went wrong',
+      })
     }
   }
 
@@ -108,7 +109,7 @@ const Articles = (props) => {
                     )
                   })}
                   {isloading ? <LoadingOutlined /> : null}
-                  {stickyFooter ? <Footer/> : null}
+                  {stickyFooter ? <Footer /> : null}
                 </div>
               </TabPane>
             )

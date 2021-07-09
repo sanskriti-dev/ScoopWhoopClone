@@ -4,6 +4,7 @@ CaretRightOutlined,
 MenuUnfoldOutlined,
 TrophyOutlined,
 SmileOutlined } from '@ant-design/icons'
+import '../index.scss'
 
 const Footer = props => {
     const navList = [
@@ -32,7 +33,7 @@ const Footer = props => {
         <div className = "footer">
             {
                 navList.map(ele => {
-                    return <div>
+                    return <div className = "menu-item">
                         <span>{ele.icon}</span>
                         <span>{ele.name}</span>
                     </div>
