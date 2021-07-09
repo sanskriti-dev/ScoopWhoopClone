@@ -11,7 +11,7 @@ const Card = (props) => {
         <figure className="img-wrapper">
           <Suspense
             fallback={
-              <img className="card-img-top" src={NaviIcon} alt="Loading..." />
+              <img className="card-img-top" alt="Loading..." />
             }
           >
             <ImageComponent imgSrc={props.imgSrc} className="card-img-top" />
