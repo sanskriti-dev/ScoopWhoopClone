@@ -1,7 +1,10 @@
 import React, { Suspense } from 'react'
 import './index.scss'
+import { Spin } from 'antd';
+
 
 const ImageComponent = React.lazy(() => import('./articleImage'))
+
 
 const Card = (props) => {
   return (
@@ -10,7 +13,8 @@ const Card = (props) => {
         <figure className="img-wrapper">
           <Suspense
             fallback={
-              <img className="card-img-top" alt="Loading..." />
+              <Spin tip="Loading...">
+            </Spin>
             }
           >
             <ImageComponent imgSrc={props.imgSrc} className="card-img-top" />

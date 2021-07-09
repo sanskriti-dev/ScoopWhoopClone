@@ -24,6 +24,7 @@ const Articles = (props) => {
     else setMobileBanner(false)
 
     window.addEventListener('scroll', listenScrollEvent)
+    document.title= window.scrollY
     getArticles()
   }, [])
 
@@ -40,13 +41,13 @@ const Articles = (props) => {
   }
 
   const listenScrollEvent = (e) => {
-    if (window.scrollY >= 170) {
+    if (window.pageYOffset >= 170) {
       setStickyNav(true)
     } else {
       setStickyNav(false)
     }
 
-    if (mobileBanner && window.scrollY < 500) setStickyFooter(true)
+    if (window.pageYOffset < 500) setStickyFooter(true)
     else setStickyFooter(false)
 
     if (
@@ -109,7 +110,7 @@ const Articles = (props) => {
                     )
                   })}
                   {isloading ? <LoadingOutlined /> : null}
-                  {stickyFooter ? <Footer /> : null}
+                  {mobileBanner && stickyFooter ? <Footer /> : null}
                 </div>
               </TabPane>
             )
