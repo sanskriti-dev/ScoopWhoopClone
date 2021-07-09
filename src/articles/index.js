@@ -20,7 +20,7 @@ const Articles = (props) => {
 
   useEffect(() => {
     window.addEventListener('scroll', listenScrollEvent)
-        if (window.innerWidth <= 640) 
+        if (window.innerWidth <= 700) 
            setMobileBanner(true)
         else setMobileBanner(false)
     getArticles()
