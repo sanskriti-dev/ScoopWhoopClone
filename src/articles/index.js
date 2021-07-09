@@ -6,7 +6,7 @@ import { message, notification, Tabs } from 'antd'
 import MobileBanner from './header/mobileBanner'
 import DesktopBanner from './header/desktopBanner'
 import { LoadingOutlined } from '@ant-design/icons'
-
+import Footer from './footer'
 import './index.scss'
 const { TabPane } = Tabs
 
@@ -105,6 +105,7 @@ const Articles = (props) => {
                     )
                   })}
                   {isloading ? <LoadingOutlined /> : null}
+                  {mobileBanner ? <Footer/> : null}
                 </div>
               </TabPane>
             )
