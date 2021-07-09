@@ -1,0 +1,138 @@
+@import "../../mixin";
+
+.card {
+    border: 0px !important;
+    margin-bottom: 45px;
+  
+    .img-wrapper {
+      overflow: hidden;   
+ 
+    }
+  
+   .card-body {
+
+    padding: 0;
+
+     .content-heading {
+    .category-text-wrap {
+    display: inline;
+   .category-text {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        background: -webkit-linear-gradient(#1b91ff ,#9f49e3);
+        -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent; 
+
+   }
+  }
+
+  .share-view{
+    color: #1b91ff;
+    font-size: 12px;
+    display: contents;
+ }
+
+}
+
+   .author-name {
+    color: #1b91ff;
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+   }
+   
+   .date-time {
+    color: #898989;
+    font-size: 11px;
+   }
+   .card-title {
+    font-size: 16px;
+    font-weight: 900;
+    color : #1E1E1E;
+    font-family: 'Roboto' sans-serif; 
+    line-height: 26px;
+    margin-top: 12px;
+    text-justify: inter-word;
+    cursor: pointer;
+   }
+}
+
+
+  &:hover {
+
+            .card-img-top {
+            cursor: pointer;
+            border-radius: 2px;
+            transform: scale(1.2);
+            transition: .5s ease;
+            }
+          
+            .card-title {
+                color : #1b91ff
+            }
+
+        }
+}
+
+@include break-point(mobile-view) {
+   .card {
+       &:hover {
+        .card-img-top {
+            transform: unset;
+            transition: unset;
+            
+        }
+
+       }
+   }
+   .content-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+   .category-text-wrap {
+   background: #ffec41;
+ 
+
+ }
+
+   .category-text {
+    padding: 8px;
+   }
+ 
+}
+
+
+@include break-point(small-mobile-view) {
+    .card {
+        &:hover {
+         .card-img-top {
+             transform: unset;
+             transition: unset;
+             
+         }
+        }
+    }
+
+    .content-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+  
+    .category-text-wrap {
+        background: #ffec41;
+        .category-text {
+            padding: 8px;
+    
+        }
+
+      }
+   
+}
+   
+
+

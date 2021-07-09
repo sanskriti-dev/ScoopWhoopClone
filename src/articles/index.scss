@@ -8,10 +8,8 @@
 .ant-tabs-nav-list {
     display: flex;
 }
-
-
-
-    .ant-tabs-tab {
+    
+.ant-tabs-tab {
     background-color: #efefef;
     color: #999696;
     font-weight: 900;
@@ -26,28 +24,31 @@
     &.ant-tabs-tab-active {
         background: linear-gradient(158.35deg,#1b91ff 0,#9f49e3 113.59%);
         color: #fff;
-    }
-
-    
+    }   
 }
 
 .ant-tabs-tab-btn {
     outline-color: transparent;
 }
 
-// .ant-tabs-nav-wrap {
-//     ::after {
-//         background: linear-gradient(158.35deg,#1b91ff 0,#9f49e3 113.59%);
-//         content: "";
-//         width: 100%;
-//         max-width: 1000px;
-//         margin-bottom: 30px;
-//         height: 1px;
-//         display: block;
-//     }
-// }
+.ant-tabs-nav-list {
+    position: relative;
 
+     &:after {
+        background: linear-gradient(158.35deg,#1b91ff 0,#9f49e3 113.59%);
+        content: "";
+        width: 100%;
+        height: 1px;
+        bottom :0;
+        position: absolute;
+    }
+}
 
+.ant-tabs-tabpane-active{
+    &:focus{
+    outline-color: transparent;
+    }
+}
 
 .banner {
     position: relative;
@@ -63,8 +64,7 @@
         .mobile-nav {
             display: flex;
             justify-content: space-between;
-           
-          
+                 
             svg {
               color: white;
               height: 35px;
@@ -93,7 +93,7 @@
 
             .card-body {
                 text-align: center;
-                padding: 25px;
+                padding: 7px 25px;
                 color: #1b91ff;
 
 
@@ -118,7 +118,9 @@
             .card-readMore{
                 color: inherit;
                 text-decoration: none;
-                text-transform: uppercase
+                text-transform: uppercase;
+                font-size: 17px;
+                
             }
 
            
@@ -154,9 +156,13 @@
         z-index: 99;
         width: 70%;
         margin-left: 40px;
+        cursor: pointer;        
+
         .header-text{
             color: #fff;
-           text-decoration: none
+           text-decoration: none;
+           font-size: 31px;
+           font-weight: 600;
            }
        
            .header-category{
@@ -173,27 +179,31 @@
             }
 
         .header-read {
-            font-size: 14px;
+            font-size: 17px;
             font-weight: 500;
-            line-height: 142.97%;
-            background: linear-gradient(136.04deg,#1b91ff -.78%,#9f49e3 92.66%) no-repeat;
-            display: inline-block;
+             display: inline-block;
+            margin-top : 15px;
+            background: -webkit-linear-gradient(#1b91ff ,#9f49e3);
+            -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent; 
         }
     }
 
    
 
     header {
-
         padding: 20px 40px;
               
         .navlist-left {
             display: flex;
             margin-top: 15px;
-            justify-content: space-evenly;
-
-          
-        
+            margin-right: 117px;
+            justify-content: space-around; 
+            
+            &.right {
+                margin-right: 15px;
+                justify-content: space-between;
+            }
 
             .nav-item {
                 font-size: 15px;
@@ -216,6 +226,7 @@
 
                 &.nav-item-sticky {
                     color:  #747070;
+                    margin-top: -10px;
                     &:hover {
                       color:   #747070;
                     }
@@ -223,8 +234,16 @@
     
             }
 
-           
-        }
+            .icons-sticky {
+                margin-top: -15px;
+                margin-left: 15px;
+            }
+
+            .icon {
+                margin-left: 15px;
+                margin-top: -5px;
+            }
+  }
         
         
 
@@ -249,7 +268,6 @@
 
     }
 
-
     ::after ::before {
         background: linear-gradient(180deg,rgba(0,0,0,.9) 0,rgba(30,30,30,0) 58.02%);
     }
@@ -268,20 +286,26 @@
 
 }
 
-::-webkit-scrollbar {
-    width: 0; 
-    background: transparent; 
-}
+
 
 @include break-point(mobile-view) {
     .cards {
         width: 90%;
     }
+
+    ::-webkit-scrollbar {
+     width: 0; 
+     background: transparent; 
+ }
 }
 
 @include break-point(small-mobile-view) {
     .banner{
-        width: 90%;
+        width: unset;
+    }
+    ::-webkit-scrollbar {
+        width: 0; 
+        background: transparent; 
     }
 }
 

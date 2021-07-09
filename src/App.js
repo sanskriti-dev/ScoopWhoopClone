@@ -1,9 +1,9 @@
 import './App.css';
-import Cards from './cards';
+import Articles from './articles';
 
 function App() {
   return (
-   <Cards/>
+   <Articles/>
   );
 }
 
