@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import Card from './articles'
 import moment from 'moment'
-import { message, notification, Tabs } from 'antd'
+import { notification, Tabs } from 'antd'
 import MobileBanner from './header/mobileBanner'
 import DesktopBanner from './header/desktopBanner'
 import { LoadingOutlined } from '@ant-design/icons'
@@ -22,9 +22,8 @@ const Articles = (props) => {
   useEffect(() => {
     if (window.innerWidth <= 700) setMobileBanner(true)
     else setMobileBanner(false)
-
     window.addEventListener('scroll', listenScrollEvent)
-    document.title= window.scrollY
+    // document.title= window.scrollY
     getArticles()
   }, [])
 
@@ -70,6 +69,7 @@ const Articles = (props) => {
       notification['error']({
         message: 'Somthing went wrong',
       })
+      setIsLoading(false)
     }
   }
 
@@ -86,7 +86,7 @@ const Articles = (props) => {
             return (
               <TabPane tab={ele} key={index}>
                 <div className="row">
-                  {allCards?.map((item) => {
+                  {allCards?.map((item,i) => {
                     return (
                       <Card
                         imgSrc={item.feature_img}
@@ -97,6 +97,7 @@ const Articles = (props) => {
                         published={moment(item.pub_date).fromNow()}
                         analytics={item.analytics}
                         isMobile={mobileBanner}
+                        key = {`artticle-${i}`}
                       />
                     )
                   })}
